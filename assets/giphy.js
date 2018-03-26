@@ -9,7 +9,7 @@ $(document).ready(function () {
     for (let i = 0; i < topics.length; i++) {
 
         $("#topic-buttons").append(`<button class="button-select" data-topic="${topics[i]}">${topics[i]}`)
-    }
+    };
 
 });
 
@@ -27,9 +27,9 @@ let bunttonMaker = function () {
     for (let i = 0; i < topics.length; i++) {
 
         $("#topic-buttons").append(`<button class="button-select" data-topic="${topics[i]}">${topics[i]}`)
-    }
+    };
 
-}
+};
 
 $("#add-topic").on("click", bunttonMaker)
 
@@ -53,8 +53,10 @@ $("#topic-buttons").on("click", ".button-select", function () {
         console.log(response)
         for (let i = 0; i < response.data.length; i++) {
 
-            $("#giphs").append(`<div><img src="${response.data[i].images.original.url}"><br><span>${response.data[i].rating}</span></div>`)
-
+        
+            $("#giphs").append(`<div class="imgsize"><img src="${response.data[i].images.original.url}"><br><span>Rating: ${response.data[i].rating}</span></div>`)
+            // $("#giphs").append(`<div><img src="${response.data[i].images.original_still.url}">`)
+            // ${response.data[i].images.original.url}
         };
     });
 
